@@ -1,9 +1,26 @@
+
+
+
+
 angular.module('articles').controller('ArticlesController', 
                                       ['$scope', '$routeParams', '$location', 'Authentication', 'Articles',
                                        
   function($scope, $routeParams, $location, Authentication, Articles) {
     
+    
+    //var contl = require('../../../app/controllers/articles.server.controller.js');
+    
     $scope.authentication = Authentication;
+    
+    
+ //===============================================   
+    console.log( 'hay'
+                  
+                                  // Articles.query()
+                                              
+                           
+               );
+ //========================================                                      
     
     $scope.create = function() {
                                 var article = new Articles({
@@ -21,8 +38,13 @@ angular.module('articles').controller('ArticlesController',
                                             );
                               };
 
-    $scope.find = function() {
+    $scope.find = function() {   
                                 $scope.articles = Articles.query();
+      
+      
+                               // console.log(contl.Article.find({'title':'the new'}).title);
+  
+      
                               };
 
     $scope.findOne = function() {
@@ -55,12 +77,20 @@ angular.module('articles').controller('ArticlesController',
                                                       }
                                         else {
                                                 $scope.article.$remove(function() {
-                                                                                    console.log("Yeah!")
+                                                                                   // console.log("Yeah!")
                                                                                     $location.path('articles');
                                                                                   });
                                         }
       
                                       };
+    
+    
+   
+  //$scope.test = function(){ $scope.people = {name:'bill'};  } ; 
+  
+   //$scope.test2 = function(){ $scope.article1 =  };   
+    
+    
   }
 ]);
 

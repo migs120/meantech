@@ -13,6 +13,8 @@ var getErrorMessage = function(err) {
 
 var Article = mongoose.model('Article');
 
+//console.log(Article.find({"title":"the new"}).title);
+
 exports.list = function(req, res) {
                                     Article.find().sort('-created').populate('creator', 'firstName   lastName fullName').exec(function(err, articles) {
                                       if (err) {
